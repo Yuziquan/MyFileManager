@@ -1,0 +1,11 @@
+E:\C#_projects\MyFileManager\MyFileManager\bin\Debug\MyFileManager.exe
+E:\C#_projects\MyFileManager\MyFileManager\bin\Debug\MyFileManager.pdb
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csprojAssemblyReference.cache
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.AboutForm.resources
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.AttributeForm.resources
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.MainForm.resources
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.Properties.Resources.resources
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csproj.GenerateResource.cache
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csproj.CoreCompileInputs.cache
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.exe
+E:\C#_projects\MyFileManager\MyFileManager\obj\Debug\MyFileManager.pdb
