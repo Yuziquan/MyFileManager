@@ -55,7 +55,7 @@
 #### 8. 快速搜索窗口
 
 
-![8]()
+![8](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/8.gif)
 
 <br/>
 
