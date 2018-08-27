@@ -838,7 +838,7 @@ namespace MyFileManager
             tscboAddress.Text = curFilePath;
 
             //更新状态栏
-            tsslblFilesNum.Text = lvwFiles.Items.Count + "个项目";
+            tsslblFilesNum.Text = lvwFiles.Items.Count + " 个项目";
 
             //结束数据更新
             lvwFiles.EndUpdate();
@@ -1289,6 +1289,9 @@ namespace MyFileManager
             //清空lvwFiles
             lvwFiles.Items.Clear();
 
+            //更新状态栏
+            tsslblFilesNum.Text = 0 + " 个项目";
+
             this.fileName = fileName;
 
             ThreadPool.SetMaxThreads(1000, 1000);
@@ -1329,7 +1332,7 @@ namespace MyFileManager
                                 AddSearchResultItemIntoList(fileInfo.FullName, true);
 
                                 //更新状态栏
-                                tsslblFilesNum.Text = lvwFiles.Items.Count + "个项目";
+                                tsslblFilesNum.Text = lvwFiles.Items.Count + " 个项目";
                             }
                         }
                         catch (Exception e)
@@ -1356,7 +1359,7 @@ namespace MyFileManager
                                 AddSearchResultItemIntoList(dirInfo.FullName, false);
 
                                 //更新状态栏
-                                tsslblFilesNum.Text = lvwFiles.Items.Count + "个项目";
+                                tsslblFilesNum.Text = lvwFiles.Items.Count + " 个项目";
                             }
                             else
                             {
@@ -1418,7 +1421,7 @@ namespace MyFileManager
                                 AddSearchResultItemIntoList(fileInfo.FullName, true);
 
                                 //更新状态栏
-                                tsslblFilesNum.Text = lvwFiles.Items.Count + "个项目";
+                                tsslblFilesNum.Text = lvwFiles.Items.Count + " 个项目";
                             }
                         }
                         catch (Exception e)
@@ -1442,7 +1445,7 @@ namespace MyFileManager
                                 AddSearchResultItemIntoList(dirInfo.FullName, false);
 
                                 //更新状态栏
-                                tsslblFilesNum.Text = lvwFiles.Items.Count + "个项目";
+                                tsslblFilesNum.Text = lvwFiles.Items.Count + " 个项目";
                             }
                             else
                             {
