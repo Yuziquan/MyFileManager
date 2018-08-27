@@ -59,13 +59,11 @@
             // 
             resources.ApplyResources(this.lblFileName, "lblFileName");
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblFileType
             // 
             resources.ApplyResources(this.lblFileType, "lblFileType");
             this.lblFileType.Name = "lblFileType";
-            this.lblFileType.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblFileLocation
             // 
@@ -76,19 +74,16 @@
             // 
             resources.ApplyResources(this.lblFileSize, "lblFileSize");
             this.lblFileSize.Name = "lblFileSize";
-            this.lblFileSize.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblFileCreateTime
             // 
             resources.ApplyResources(this.lblFileCreateTime, "lblFileCreateTime");
             this.lblFileCreateTime.Name = "lblFileCreateTime";
-            this.lblFileCreateTime.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblFileModifyTime
             // 
             resources.ApplyResources(this.lblFileModifyTime, "lblFileModifyTime");
             this.lblFileModifyTime.Name = "lblFileModifyTime";
-            this.lblFileModifyTime.Click += new System.EventHandler(this.lblModifyTime_Click);
             // 
             // lblFileAccessTime
             // 
@@ -166,7 +161,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AttributeForm";
-            this.Load += new System.EventHandler(this.AboutForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

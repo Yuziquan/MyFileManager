@@ -9,13 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace MyFileManager
 {
+    //获取指定文件在系统中的对应图标的工具类
     class GetSystemIcon
     {
-        /// <summary>
-        /// 依据文件名读取图标，若指定文件不存在，则返回空值。
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        //依据文件名读取图标，若指定文件不存在，则返回空值。
         public static Icon GetIconByFileName(string fileName)
         {
             if (fileName == null || fileName.Equals(string.Empty)) return null;
@@ -29,13 +26,8 @@ namespace MyFileManager
             return myIcon;
         }
 
-        /// <summary>
-        /// 给出文件扩展名（.*），返回相应图标
-        /// 若不以"."开头则返回文件夹的图标。
-        /// </summary>
-        /// <param name="fileType"></param>
-        /// <param name="isLarge"></param>
-        /// <returns></returns>
+        
+        //给出文件扩展名（.*），返回相应图标。若不以"."开头则返回文件夹的图标。
         public static Icon GetIconByFileType(string fileType, bool isLarge)
         {
             if (fileType == null || fileType.Equals(string.Empty)) return null;
@@ -104,14 +96,13 @@ namespace MyFileManager
         public string szTypeName;
     };
 
-    /// <summary>
-    /// 定义调用的API方法
-    /// </summary>
+
+    //定义调用的API方法
     class Win32
     {
         public const uint SHGFI_ICON = 0x100;
-        public const uint SHGFI_LARGEICON = 0x0; // 'Large icon
-        public const uint SHGFI_SMALLICON = 0x1; // 'Small icon
+        public const uint SHGFI_LARGEICON = 0x0; // Large icon
+        public const uint SHGFI_SMALLICON = 0x1; // Small icon
 
         [DllImport("shell32.dll")]
         public static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbSizeFileInfo, uint uFlags);

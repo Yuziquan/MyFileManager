@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.msMain = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNewFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPrivilege = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiProperties = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +52,8 @@
             this.tssLine7 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiProcessThread = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMonitor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain = new System.Windows.Forms.ToolStrip();
@@ -59,7 +63,7 @@
             this.tssLine1 = new System.Windows.Forms.ToolStripSeparator();
             this.tscboAddress = new System.Windows.Forms.ToolStripComboBox();
             this.tssLine2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tstxtSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.tscboSearch = new System.Windows.Forms.ToolStripComboBox();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiView1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +79,10 @@
             this.tsmiDelete1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRename = new System.Windows.Forms.ToolStripMenuItem();
             this.tssLine4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiNewFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNewFolder1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNewFile1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tssLine5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiPrivilege1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiProperties1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ilstIcons = new System.Windows.Forms.ImageList(this.components);
             this.ssFooter = new System.Windows.Forms.StatusStrip();
@@ -110,23 +116,46 @@
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
             this.msMain.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.msMain.Size = new System.Drawing.Size(784, 27);
+            this.msMain.Size = new System.Drawing.Size(984, 27);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
             // tsmiFile
             // 
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiNewFolder,
+            this.tsmiNewFile,
+            this.tsmiPrivilege,
             this.tsmiProperties});
             this.tsmiFile.Name = "tsmiFile";
             this.tsmiFile.Size = new System.Drawing.Size(44, 21);
             this.tsmiFile.Text = "文件";
-            this.tsmiFile.Click += new System.EventHandler(this.tsmiFile_Click);
+            // 
+            // tsmiNewFolder
+            // 
+            this.tsmiNewFolder.Name = "tsmiNewFolder";
+            this.tsmiNewFolder.Size = new System.Drawing.Size(136, 22);
+            this.tsmiNewFolder.Text = "新建文件夹";
+            this.tsmiNewFolder.Click += new System.EventHandler(this.tsmiNewFolder_Click);
+            // 
+            // tsmiNewFile
+            // 
+            this.tsmiNewFile.Name = "tsmiNewFile";
+            this.tsmiNewFile.Size = new System.Drawing.Size(136, 22);
+            this.tsmiNewFile.Text = "新建文件";
+            this.tsmiNewFile.Click += new System.EventHandler(this.tsmiNewFile_Click);
+            // 
+            // tsmiPrivilege
+            // 
+            this.tsmiPrivilege.Name = "tsmiPrivilege";
+            this.tsmiPrivilege.Size = new System.Drawing.Size(136, 22);
+            this.tsmiPrivilege.Text = "权限管理";
+            this.tsmiPrivilege.Click += new System.EventHandler(this.tsmiPrivilege_Click);
             // 
             // tsmiProperties
             // 
             this.tsmiProperties.Name = "tsmiProperties";
-            this.tsmiProperties.Size = new System.Drawing.Size(100, 22);
+            this.tsmiProperties.Size = new System.Drawing.Size(136, 22);
             this.tsmiProperties.Text = "属性";
             this.tsmiProperties.Click += new System.EventHandler(this.tsmiProperties_Click);
             // 
@@ -140,31 +169,34 @@
             this.tsmiEdit.Name = "tsmiEdit";
             this.tsmiEdit.Size = new System.Drawing.Size(44, 21);
             this.tsmiEdit.Text = "编辑";
-            this.tsmiEdit.Click += new System.EventHandler(this.tsmiEdit_Click);
             // 
             // tsmiCopy
             // 
             this.tsmiCopy.Name = "tsmiCopy";
             this.tsmiCopy.Size = new System.Drawing.Size(100, 22);
             this.tsmiCopy.Text = "复制";
+            this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
             this.tsmiPaste.Size = new System.Drawing.Size(100, 22);
             this.tsmiPaste.Text = "粘贴";
+            this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // tsmiCut
             // 
             this.tsmiCut.Name = "tsmiCut";
             this.tsmiCut.Size = new System.Drawing.Size(100, 22);
             this.tsmiCut.Text = "剪切";
+            this.tsmiCut.Click += new System.EventHandler(this.tsmiCut_Click);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
             this.tsmiDelete.Size = new System.Drawing.Size(100, 22);
             this.tsmiDelete.Text = "删除";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
             // tsmiView
             // 
@@ -248,17 +280,25 @@
             // tsmiTool
             // 
             this.tsmiTool.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiSearch});
+            this.tsmiProcessThread,
+            this.tsmiMonitor});
             this.tsmiTool.Name = "tsmiTool";
             this.tsmiTool.Size = new System.Drawing.Size(44, 21);
             this.tsmiTool.Text = "工具";
             // 
-            // tsmiSearch
+            // tsmiProcessThread
             // 
-            this.tsmiSearch.Name = "tsmiSearch";
-            this.tsmiSearch.Size = new System.Drawing.Size(100, 22);
-            this.tsmiSearch.Text = "搜索";
-            this.tsmiSearch.Click += new System.EventHandler(this.tsmiSearch_Click);
+            this.tsmiProcessThread.Name = "tsmiProcessThread";
+            this.tsmiProcessThread.Size = new System.Drawing.Size(165, 22);
+            this.tsmiProcessThread.Text = "进程/线程管理";
+            this.tsmiProcessThread.Click += new System.EventHandler(this.tsmiProcessThread_Click);
+            // 
+            // tsmiMonitor
+            // 
+            this.tsmiMonitor.Name = "tsmiMonitor";
+            this.tsmiMonitor.Size = new System.Drawing.Size(165, 22);
+            this.tsmiMonitor.Text = "文件/文件夹监控";
+            this.tsmiMonitor.Click += new System.EventHandler(this.tsmiMonitor_Click);
             // 
             // tsmiHelp
             // 
@@ -284,13 +324,12 @@
             this.tssLine1,
             this.tscboAddress,
             this.tssLine2,
-            this.tstxtSearch});
+            this.tscboSearch});
             this.tsMain.Location = new System.Drawing.Point(0, 27);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(784, 25);
+            this.tsMain.Size = new System.Drawing.Size(984, 25);
             this.tsMain.TabIndex = 1;
             this.tsMain.Text = "toolStrip1";
-            this.tsMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsMain_ItemClicked);
             // 
             // tsbtnBack
             // 
@@ -330,11 +369,12 @@
             // tscboAddress
             // 
             this.tscboAddress.AutoSize = false;
-            this.tscboAddress.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tscboAddress.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tscboAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tscboAddress.ForeColor = System.Drawing.Color.Black;
             this.tscboAddress.Name = "tscboAddress";
             this.tscboAddress.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.tscboAddress.Size = new System.Drawing.Size(500, 22);
+            this.tscboAddress.Size = new System.Drawing.Size(700, 25);
             this.tscboAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tscboAddress_KeyDown);
             // 
             // tssLine2
@@ -342,10 +382,15 @@
             this.tssLine2.Name = "tssLine2";
             this.tssLine2.Size = new System.Drawing.Size(6, 25);
             // 
-            // tstxtSearch
+            // tscboSearch
             // 
-            this.tstxtSearch.Name = "tstxtSearch";
-            this.tstxtSearch.Size = new System.Drawing.Size(170, 25);
+            this.tscboSearch.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tscboSearch.Name = "tscboSearch";
+            this.tscboSearch.Size = new System.Drawing.Size(170, 25);
+            this.tscboSearch.Text = "快速搜索";
+            this.tscboSearch.Enter += new System.EventHandler(this.tscboSearch_Enter);
+            this.tscboSearch.Leave += new System.EventHandler(this.tscboSearch_Leave);
+            this.tscboSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tscboSearch_KeyDown);
             // 
             // cmsMain
             // 
@@ -360,11 +405,13 @@
             this.tsmiDelete1,
             this.tsmiRename,
             this.tssLine4,
-            this.tsmiNewFolder,
+            this.tsmiNewFolder1,
+            this.tsmiNewFile1,
             this.tssLine5,
+            this.tsmiPrivilege1,
             this.tsmiProperties1});
             this.cmsMain.Name = "contextMenuStrip1";
-            this.cmsMain.Size = new System.Drawing.Size(137, 242);
+            this.cmsMain.Size = new System.Drawing.Size(137, 286);
             this.cmsMain.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMain_Opening);
             // 
             // tsmiOpen
@@ -465,17 +512,31 @@
             this.tssLine4.Name = "tssLine4";
             this.tssLine4.Size = new System.Drawing.Size(133, 6);
             // 
-            // tsmiNewFolder
+            // tsmiNewFolder1
             // 
-            this.tsmiNewFolder.Name = "tsmiNewFolder";
-            this.tsmiNewFolder.Size = new System.Drawing.Size(136, 22);
-            this.tsmiNewFolder.Text = "新建文件夹";
-            this.tsmiNewFolder.Click += new System.EventHandler(this.tsmiNewFolder_Click);
+            this.tsmiNewFolder1.Name = "tsmiNewFolder1";
+            this.tsmiNewFolder1.Size = new System.Drawing.Size(136, 22);
+            this.tsmiNewFolder1.Text = "新建文件夹";
+            this.tsmiNewFolder1.Click += new System.EventHandler(this.tsmiNewFolder_Click);
+            // 
+            // tsmiNewFile1
+            // 
+            this.tsmiNewFile1.Name = "tsmiNewFile1";
+            this.tsmiNewFile1.Size = new System.Drawing.Size(136, 22);
+            this.tsmiNewFile1.Text = "新建文件";
+            this.tsmiNewFile1.Click += new System.EventHandler(this.tsmiNewFile_Click);
             // 
             // tssLine5
             // 
             this.tssLine5.Name = "tssLine5";
             this.tssLine5.Size = new System.Drawing.Size(133, 6);
+            // 
+            // tsmiPrivilege1
+            // 
+            this.tsmiPrivilege1.Name = "tsmiPrivilege1";
+            this.tsmiPrivilege1.Size = new System.Drawing.Size(136, 22);
+            this.tsmiPrivilege1.Text = "权限管理";
+            this.tsmiPrivilege1.Click += new System.EventHandler(this.tsmiPrivilege_Click);
             // 
             // tsmiProperties1
             // 
@@ -492,14 +553,15 @@
             this.ilstIcons.Images.SetKeyName(1, "CD_ROM.png");
             this.ilstIcons.Images.SetKeyName(2, "u_pan.png");
             this.ilstIcons.Images.SetKeyName(3, "folder.png");
+            this.ilstIcons.Images.SetKeyName(4, "recent.png");
             // 
             // ssFooter
             // 
             this.ssFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslblFilesNum});
-            this.ssFooter.Location = new System.Drawing.Point(0, 389);
+            this.ssFooter.Location = new System.Drawing.Point(0, 539);
             this.ssFooter.Name = "ssFooter";
-            this.ssFooter.Size = new System.Drawing.Size(784, 22);
+            this.ssFooter.Size = new System.Drawing.Size(984, 22);
             this.ssFooter.TabIndex = 2;
             // 
             // tsslblFilesNum
@@ -521,22 +583,22 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.lvwFiles);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 337);
-            this.splitContainer1.SplitterDistance = 262;
+            this.splitContainer1.Size = new System.Drawing.Size(984, 487);
+            this.splitContainer1.SplitterDistance = 328;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 3;
             // 
             // tvwDirectory
             // 
             this.tvwDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvwDirectory.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvwDirectory.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvwDirectory.ImageIndex = 0;
             this.tvwDirectory.ImageList = this.ilstIcons;
             this.tvwDirectory.Location = new System.Drawing.Point(0, 0);
             this.tvwDirectory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tvwDirectory.Name = "tvwDirectory";
             this.tvwDirectory.SelectedImageIndex = 0;
-            this.tvwDirectory.Size = new System.Drawing.Size(262, 337);
+            this.tvwDirectory.Size = new System.Drawing.Size(328, 487);
             this.tvwDirectory.TabIndex = 0;
             this.tvwDirectory.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvwDirectory_BeforeExpand);
             this.tvwDirectory.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvwDirectory_AfterExpand);
@@ -552,13 +614,13 @@
             this.columnHeader4});
             this.lvwFiles.ContextMenuStrip = this.cmsMain;
             this.lvwFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvwFiles.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvwFiles.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvwFiles.FullRowSelect = true;
             this.lvwFiles.LabelEdit = true;
             this.lvwFiles.Location = new System.Drawing.Point(0, 0);
             this.lvwFiles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvwFiles.Name = "lvwFiles";
-            this.lvwFiles.Size = new System.Drawing.Size(517, 337);
+            this.lvwFiles.Size = new System.Drawing.Size(651, 487);
             this.lvwFiles.SmallImageList = this.ilstIcons;
             this.lvwFiles.TabIndex = 0;
             this.lvwFiles.UseCompatibleStateImageBehavior = false;
@@ -569,7 +631,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "名称";
-            this.columnHeader1.Width = 250;
+            this.columnHeader1.Width = 260;
             // 
             // columnHeader2
             // 
@@ -579,18 +641,18 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "类型";
-            this.columnHeader3.Width = 110;
+            this.columnHeader3.Width = 120;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "大小";
-            this.columnHeader4.Width = 100;
+            this.columnHeader4.Width = 140;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 411);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ssFooter);
             this.Controls.Add(this.tsMain);
@@ -600,6 +662,7 @@
             this.MainMenuStrip = this.msMain;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "文件资源管理器";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
@@ -632,7 +695,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmiTool;
         private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearch;
         private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
         private System.Windows.Forms.ToolStrip tsMain;
         private System.Windows.Forms.ToolStripButton tsbtnBack;
@@ -640,7 +702,6 @@
         private System.Windows.Forms.ToolStripButton tsbtnUpArrow;
         private System.Windows.Forms.ToolStripSeparator tssLine1;
         private System.Windows.Forms.ToolStripSeparator tssLine2;
-        private System.Windows.Forms.ToolStripTextBox tstxtSearch;
         private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiView1;
         private System.Windows.Forms.ToolStripMenuItem tsmiBigIcon1;
@@ -654,7 +715,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDelete1;
         private System.Windows.Forms.ToolStripMenuItem tsmiRename;
         private System.Windows.Forms.ToolStripSeparator tssLine4;
-        private System.Windows.Forms.ToolStripMenuItem tsmiNewFolder;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNewFolder1;
         private System.Windows.Forms.ToolStripSeparator tssLine5;
         private System.Windows.Forms.ToolStripMenuItem tsmiProperties1;
         private System.Windows.Forms.ImageList ilstIcons;
@@ -680,5 +741,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiProcessThread;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMonitor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPrivilege1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNewFolder;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNewFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNewFile1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPrivilege;
+        private System.Windows.Forms.ToolStripComboBox tscboSearch;
     }
 }

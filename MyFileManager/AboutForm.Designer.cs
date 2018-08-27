@@ -35,9 +35,10 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(223, 200);
+            this.btnConfirm.Location = new System.Drawing.Point(202, 158);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.Size = new System.Drawing.Size(87, 26);
             this.btnConfirm.TabIndex = 0;
             this.btnConfirm.Text = "确定";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -46,25 +47,28 @@
             // lblShow
             // 
             this.lblShow.AutoSize = true;
-            this.lblShow.Location = new System.Drawing.Point(181, 63);
+            this.lblShow.Location = new System.Drawing.Point(161, 69);
             this.lblShow.Name = "lblShow";
-            this.lblShow.Size = new System.Drawing.Size(161, 12);
-            this.lblShow.TabIndex = 1;
+            this.lblShow.Size = new System.Drawing.Size(172, 17);
+            this.lblShow.TabIndex = 3;
             this.lblShow.Text = "Windows文件资源管理器 v1.0";
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 249);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(492, 198);
             this.Controls.Add(this.lblShow);
             this.Controls.Add(this.btnConfirm);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "关于";
-            this.Load += new System.EventHandler(this.AboutForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

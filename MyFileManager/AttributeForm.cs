@@ -16,8 +16,29 @@ namespace MyFileManager
         {
             InitializeComponent();
 
+            //初始化界面
+            InitDisplay(filePath);
+        }
+
+
+        //关闭对话框
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+
+
+
+
+
+        //初始化界面
+        private void InitDisplay(string filePath)
+        {
             //如果filePath是文件的路径
-            if(File.Exists(filePath))
+            if (File.Exists(filePath))
             {
                 FileInfo fileInfo = new FileInfo(filePath);
 
@@ -25,9 +46,9 @@ namespace MyFileManager
                 txtFileType.Text = fileInfo.Extension;
                 txtFileLocation.Text = (fileInfo.DirectoryName != null) ? fileInfo.DirectoryName : null;
                 txtFileSize.Text = ShowFileSize(fileInfo.Length);
-                txtFileCreateTime.Text = fileInfo.CreationTimeUtc.ToString();
-                txtFileModifyTime.Text = fileInfo.LastWriteTimeUtc.ToString();
-                txtFileAccessTime.Text = fileInfo.LastAccessTimeUtc.ToString();
+                txtFileCreateTime.Text = fileInfo.CreationTime.ToString();
+                txtFileModifyTime.Text = fileInfo.LastWriteTime.ToString();
+                txtFileAccessTime.Text = fileInfo.LastAccessTime.ToString();
             }
             //如果filePath是文件夹的路径
             else if (Directory.Exists(filePath))
@@ -38,50 +59,17 @@ namespace MyFileManager
                 txtFileType.Text = "文件夹";
                 txtFileLocation.Text = (directoryInfo.Parent != null) ? directoryInfo.Parent.FullName : null;
                 txtFileSize.Text = ShowFileSize(GetDirectoryLength(filePath));
-                txtFileCreateTime.Text = directoryInfo.CreationTimeUtc.ToString();
-                txtFileModifyTime.Text = directoryInfo.LastWriteTimeUtc.ToString();
-                txtFileAccessTime.Text = directoryInfo.LastAccessTimeUtc.ToString();
+                txtFileCreateTime.Text = directoryInfo.CreationTime.ToString();
+                txtFileModifyTime.Text = directoryInfo.LastWriteTime.ToString();
+                txtFileAccessTime.Text = directoryInfo.LastAccessTime.ToString();
             }
-            
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AboutForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblModifyTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         //获取目录的大小
         private long GetDirectoryLength(string dirPath)
         {
             long length = 0;
-
             DirectoryInfo directoryInfo = new DirectoryInfo(dirPath);
 
         
@@ -111,6 +99,7 @@ namespace MyFileManager
 
 
         //以一定格式显示文件的大小
+        //Math.Round(num,2,MidpointRounding.AwayFromZero)，中国式的四舍五入，num保留2位小数
         public static string ShowFileSize(long fileSize)
         {
             string fileSizeStr = "";
@@ -121,25 +110,19 @@ namespace MyFileManager
             }
             else if (fileSize >= 1024 && fileSize < 1024 * 1024)
             {
-                fileSizeStr = fileSize / 1024 + " KB(" + fileSize + "字节)";
+                fileSizeStr = Math.Round(fileSize * 1.0 / 1024, 2, MidpointRounding.AwayFromZero) + " KB(" + fileSize + "字节)";
             }
             else if (fileSize >= 1024 * 1024 && fileSize < 1024 * 1024 * 1024)
             {
-                fileSizeStr = fileSize / (1024 * 1024) + " MB(" + fileSize + "字节)";
+                fileSizeStr = Math.Round(fileSize * 1.0 / (1024 * 1024), 2, MidpointRounding.AwayFromZero) + " MB(" + fileSize + "字节)";
             }
             else if (fileSize >= 1024 * 1024 * 1024)
             {
-                fileSizeStr = fileSize / (1024 * 1024 * 1024) + " GB(" + fileSize + "字节)";
+                fileSizeStr = Math.Round(fileSize * 1.0 / (1024 * 1024 * 1024), 2, MidpointRounding.AwayFromZero) + " GB(" + fileSize + "字节)";
             }
 
             return fileSizeStr;
         }
 
-
-        //关闭对话框
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

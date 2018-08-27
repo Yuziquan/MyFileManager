@@ -16,15 +16,11 @@ namespace MyFileManager
             InitializeComponent();
         }
 
-        //关闭对话框
+       
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void AboutForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
