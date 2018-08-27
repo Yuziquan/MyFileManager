@@ -4,7 +4,7 @@
 
 #### 1. 主窗体
 
-![1]()
+![1](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/1.gif)
 
 <br/>
 
@@ -12,39 +12,44 @@
 
 
 
-![2]()
+![2](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/2.gif)
 
 <br/>
 
 #### 3. “最近访问”功能区
 
-![3]()
+![3](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/3.gif)
 
 <br/>
 
 #### 4. 进程/线程管理窗口
 
-![4]()
+![4-1](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/4-1.gif)
+
+<br/>
+
+![4-2](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/4-2.gif)
 
 <br/>
 
 #### 5. 文件/文件夹监控窗口
 
-![5]()
+![5](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/5.gif)
 
 <br/>
 
 #### 6. 文件属性窗口
 
-![6]()
+![6](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/6.gif)
 
 <br/>
 
 #### 7. 权限管理窗口
 
-![7]()
+![7](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/7.gif)
 
 <br/>
+
 ***
 
 ### 二、版本更新
@@ -64,6 +69,7 @@
 
 
 <br/>
+
 ***
 
 #### 2、V1.1.2
@@ -78,6 +84,7 @@
 8. 修复了主窗体上方地址栏显示的文件路径在用户操作过程中有时更新不正确的bug。
 
 <br/>
+
 ***
 
 #### 3、V1.3.0
@@ -91,6 +98,7 @@
 7. 实现了对当前计算机的文件/文件夹的权限管理功能。权限管理包括：完全控制、修改、读取和执行、列出文件夹内容、读取、写入共6个模块。
 
 <br/>
+
 ***
 
 #### 4、V1.4.1
@@ -100,6 +108,7 @@
 3. 修复了此前多线程搜索时”只支持在文件夹下进行搜索“的bug，目前支持对除系统盘以外的其他磁盘驱动器进行搜索，系统盘因为权限保护原因而无法访问。
 
 <br/>
+
 ***
 ### 三、遵循的WinForm 控件命名规范
 
@@ -107,12 +116,14 @@
 
 
 <br/>
+
 ***
 ### 四、约定事项
 > 1. TreeNode的Tag字段放置真实路径，Text字段放置显示的文件夹名或驱动器名；
 > 2. ListViewItem的Tag字段放置真实路径，Text字段放置显示的文件夹名或文件名。
 
 <br/>
+
 ***
 ### 五、未修复的bug以及未完成的功能
 1. 在主窗体右边文件列表的大图标视图中，大图标不能正常显示；
@@ -129,7 +140,10 @@
 12. 选中多个文件/文件夹时只支持间隔选择，也就是按住Ctrl键不放逐一单击。还未支持选定全部，也就是Ctrl+A;
 13. 快速搜索的结果没有像windows那样过滤掉一些系统文件和隐藏文件。
 
+
+
 <br/>
+
 ***
 
 ### 六、参考资料
