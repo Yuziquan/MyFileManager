@@ -135,7 +135,7 @@
             // 
             this.txtCurThreadNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCurThreadNum.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurThreadNum.Location = new System.Drawing.Point(89, 591);
+            this.txtCurThreadNum.Location = new System.Drawing.Point(67, 592);
             this.txtCurThreadNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCurThreadNum.Name = "txtCurThreadNum";
             this.txtCurThreadNum.Size = new System.Drawing.Size(34, 23);

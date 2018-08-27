@@ -28,6 +28,8 @@
 
 <br/>
 
+<br/>
+
 ![4-2](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/4-2.gif)
 
 <br/>
@@ -49,6 +51,15 @@
 ![7](https://github.com/Yuziquan/MyFileManager/blob/master/Screenshots/7.gif)
 
 <br/>
+
+#### 8. 快速搜索窗口
+
+
+![8]()
+
+<br/>
+
+
 
 ***
 
@@ -188,5 +199,4 @@
 39. https://blog.csdn.net/baidu_27438681/article/details/72823844 (
    Visual Stdio 2015打包安装项目的方法（使用Visual Studio Installer）)
 40. https://baike.baidu.com/item/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/1951545 (资源管理器的定义)
-41. 
 

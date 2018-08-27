@@ -179,7 +179,7 @@
             // 
             this.txtCurProcessNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCurProcessNum.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurProcessNum.Location = new System.Drawing.Point(245, 596);
+            this.txtCurProcessNum.Location = new System.Drawing.Point(181, 604);
             this.txtCurProcessNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCurProcessNum.Name = "txtCurProcessNum";
             this.txtCurProcessNum.Size = new System.Drawing.Size(53, 22);
