@@ -99,8 +99,8 @@ namespace MyFileManager
 
         private void tsmiCopy_Click(object sender, EventArgs e)
         {
-            //获得待复制文件的源路径
-            SetCopyFilesSourcePaths();
+            //复制文件
+            CopyFiles();
         }
 
         private void tsmiPaste_Click(object sender, EventArgs e)
@@ -267,7 +267,6 @@ namespace MyFileManager
             {
                 return;
             }
-
         }
 
 
@@ -292,7 +291,6 @@ namespace MyFileManager
                 ShowFilesList(newPath, true);
             }
         }
-
 
 
 
@@ -1012,21 +1010,11 @@ namespace MyFileManager
         }
 
 
-
-        //获得待复制文件的源路径
-        private void SetCopyFilesSourcePaths()
+        //复制文件
+        private void CopyFiles()
         {
-            if (lvwFiles.SelectedItems.Count > 0)
-            {
-                int i = 0;
-
-                foreach (ListViewItem item in lvwFiles.SelectedItems)
-                {
-                    copyFilesSourcePaths[i++] = item.Tag.ToString();
-                }
-
-                isMove = false;
-            }
+            //获得待复制文件的源路径
+            SetCopyFilesSourcePaths();
         }
 
 
@@ -1057,12 +1045,14 @@ namespace MyFileManager
                 //如果是文件
                 if (File.Exists(copyFilesSourcePaths[i]))
                 {
-                    CopyOrMoveFileBySourcePath(copyFilesSourcePaths[i]);
+                    //执行文件的“移动到”或“复制到”
+                    MoveToOrCopyToFileBySourcePath(copyFilesSourcePaths[i]);
                 }
                 //如果是文件夹
                 else if (Directory.Exists(copyFilesSourcePaths[i]))
                 {
-                    CopyOrMoveDirectoryBySourcePath(copyFilesSourcePaths[i]);
+                    //执行文件夹的“移动到”或“复制到”
+                    MoveToOrCopyToDirectoryBySourcePath(copyFilesSourcePaths[i]);
                 }
 
             }
@@ -1082,7 +1072,10 @@ namespace MyFileManager
         //剪切文件
         private void CutFiles()
         {
+            //获得待复制文件的源路径
             SetCopyFilesSourcePaths();
+
+            //准备移动
             isMove = true;
         }
 
@@ -1134,9 +1127,29 @@ namespace MyFileManager
 
 
 
+        //获得待复制文件的源路径
+        private void SetCopyFilesSourcePaths()
+        {
+            if (lvwFiles.SelectedItems.Count > 0)
+            {
+                int i = 0;
 
-        //复制(并粘贴)或移动文件
-        private void CopyOrMoveFileBySourcePath(string sourcePath)
+                foreach (ListViewItem item in lvwFiles.SelectedItems)
+                {
+                    copyFilesSourcePaths[i++] = item.Tag.ToString();
+                }
+
+                isMove = false;
+            }
+        }
+
+
+
+
+
+
+        //执行文件的“移动到”或“复制到”
+        private void MoveToOrCopyToFileBySourcePath(string sourcePath)
         {
             try
             {
@@ -1151,12 +1164,12 @@ namespace MyFileManager
                     return;
                 }
 
-                //移动文件到目的路径
+                //移动文件到目的路径（当前是在执行“剪切+粘贴”操作）
                 if (isMove)
                 {
                     fileInfo.MoveTo(destPath);
                 }
-                //粘贴文件到目的路径
+                //粘贴文件到目的路径（当前是在执行“复制+粘贴”操作）
                 else
                 {
                     fileInfo.CopyTo(destPath);
@@ -1172,6 +1185,7 @@ namespace MyFileManager
 
 
         //通过递归，复制并粘贴文件夹（包含文件夹下的所有文件）
+        //没有DirectoryInfo.CopyTo(string path)方法，需要自己实现
         private void CopyAndPasteDirectory(DirectoryInfo sourceDirInfo, DirectoryInfo destDirInfo)
         {
             //判断目标文件夹是否是源文件夹的子目录，是则给出错误提示，不进行任何操作
@@ -1207,8 +1221,8 @@ namespace MyFileManager
 
 
 
-        //复制(并粘贴)或移动文件夹
-        private void CopyOrMoveDirectoryBySourcePath(string sourcePath)
+        //执行文件夹的“移动到”或“复制到”
+        private void MoveToOrCopyToDirectoryBySourcePath(string sourcePath)
         {
             try
             {
@@ -1223,15 +1237,22 @@ namespace MyFileManager
                     return;
                 }
 
-                //移动文件夹到目的路径
+                //移动文件夹到目的路径（当前是在执行“剪切+粘贴”操作）
                 if (isMove)
                 {
-                    sourceDirectoryInfo.MoveTo(destPath);
+                    //若使用sourceDirectoryInfo.MoveTo(destPath)，则不支持跨磁盘移动文件夹
+
+                    //通过递归，复制并粘贴文件夹（包含文件夹下的所有文件）
+                    CopyAndPasteDirectory(sourceDirectoryInfo, new DirectoryInfo(destPath));
+
+                    //删除源文件夹
+                    Directory.Delete(sourcePath, true);
+
                 }
-                //粘贴文件夹到目的路径
+                //粘贴文件夹到目的路径（当前是在执行“复制+粘贴”操作）
                 else
                 {
-                    //没有DirectoryInfo.CopyTo(string path)方法，需要自己实现
+                    //通过递归，复制并粘贴文件夹（包含文件夹下的所有文件）
                     CopyAndPasteDirectory(sourceDirectoryInfo, new DirectoryInfo(destPath));
                 }
             }

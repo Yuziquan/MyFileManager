@@ -1,5 +1,6 @@
 E:\Codes\GitHub\MyFileManager\MyFileManager\bin\Debug\MyFileManager.exe
 E:\Codes\GitHub\MyFileManager\MyFileManager\bin\Debug\MyFileManager.pdb
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csprojAssemblyReference.cache
 E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.AboutForm.resources
 E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.AttributeForm.resources
 E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.FileAndFolderMonitorForm.resources
@@ -13,4 +14,3 @@ E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csproj.Gener
 E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csproj.CoreCompileInputs.cache
 E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.exe
 E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.pdb
-E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Debug\MyFileManager.csprojAssemblyReference.cache
