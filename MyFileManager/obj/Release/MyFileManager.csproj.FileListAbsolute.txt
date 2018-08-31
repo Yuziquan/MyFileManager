@@ -1,0 +1,16 @@
+E:\Codes\GitHub\MyFileManager\MyFileManager\bin\Release\MyFileManager.exe
+E:\Codes\GitHub\MyFileManager\MyFileManager\bin\Release\MyFileManager.pdb
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.csprojAssemblyReference.cache
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.AboutForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.AttributeForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.FileAndFolderMonitorForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.MainForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.NewFileForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.PrivilegeForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.ProcessForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.Properties.Resources.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.ThreadForm.resources
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.csproj.GenerateResource.cache
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.csproj.CoreCompileInputs.cache
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.exe
+E:\Codes\GitHub\MyFileManager\MyFileManager\obj\Release\MyFileManager.pdb

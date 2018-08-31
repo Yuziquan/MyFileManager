@@ -169,7 +169,7 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 4000;
+            this.timer.Interval = 6000;
             this.timer.Tick += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ThreadForm

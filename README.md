@@ -139,16 +139,15 @@
 ### 五、未修复的bug以及未完成的功能
 1. 在主窗体右边文件列表的大图标视图中，大图标不能正常显示；
 2. 不能实现.png、.jpg图片的预览；
-3. 在权限管理部分有些未修复的bug，主要是微软官方的资料缺乏或未公开；
+3. 在权限管理部分有些未修复的bug，主要是因为微软官方的资料缺乏或未公开；
 4. 在粘贴较多文件时界面停止响应；（因为未使用多线程，可以在显示界面的同时，另外开启一个线程来进行粘贴操作）；
 5. 快速搜索中，因为对于系统盘没有权限访问，导致无法对系统盘进行搜索；
 6. 新建一个文件之后，如果马上双击打开查看，则会提示”另一个程序正在使用此文件，进程无法访问“。如果再刷新几次，又能正常打开查看；
-7. 不能实现图片预览;
-8. 还未实现主窗体右边文件列表的”排序方式“功能；
-9. 还未引入快捷键功能；
-10. 选中多个文件/文件夹时只支持间隔选择，也就是按住Ctrl键不放逐一单击。还未支持选定全部，也就是Ctrl+A;
-11. 快速搜索的结果没有像windows那样过滤掉一些系统文件和隐藏文件；
-12. 快速搜索过程中不支持实时停止。
+7. 还未实现主窗体右边文件列表的”排序方式“功能；
+8. 还未引入快捷键功能；
+9. 选中多个文件/文件夹时只支持间隔选择，也就是按住Ctrl键不放逐一单击。还未支持选定全部，也就是Ctrl+A;
+10. 快速搜索的结果没有像windows那样过滤掉一些系统文件和隐藏文件；
+11. 快速搜索过程中不支持实时停止。
 
 
 
@@ -157,45 +156,47 @@
 ***
 
 ### 六、参考资料
-1. https://docs.microsoft.com/zh-cn/dotnet/csharp/ (C# 指南)
-2. https://docs.microsoft.com/zh-cn/dotnet/framework/winforms/index (Windows 窗体)
-3. https://docs.microsoft.com/zh-cn/dotnet/framework/winforms/controls/treeview-control-windows-forms (TreeView 控件（Windows 窗体）)
-4. https://blog.csdn.net/Lyncai/article/details/26681645 (Path.Combine （合并两个路径字符串）方法的一些使用细节)
-5. https://blog.csdn.net/luchuanbo/article/details/1630095 (C＃中TreeView组件使用方法初步)
-6. https://blog.csdn.net/eastmount/article/details/18474655 (C# 系统应用之获取Windows最近使用记录)
-7. https://www.cnblogs.com/shenbing/p/5629716.html (C#编程，TreeView控件的学习)
-8. https://blog.csdn.net/qth515/article/details/77890558 (C# SplitContainer 控件详细用法)
-9. https://blog.csdn.net/u010450592/article/details/46817233 (winfrom窗体的Anchor属性、Dock属性)
-10. https://www.cnblogs.com/menghuijinxi/p/5734274.html (关于.Net中Process的使用方法和各种用途汇总（一）：Process用法简介)
-11. https://blog.csdn.net/qq_29176825/article/details/77183599 (c# 设置窗体位置)
-12. https://bbs.csdn.net/topics/390753352 (C# ListView如何通代码触发BeforeLabelEdit事件)
-13. https://blog.csdn.net/jiliqiang1986/article/details/52034964 (C#中怎样使控件随着窗体一起变化大小(常见困难以及修正))
-14. https://blog.csdn.net/qq_36526650/article/details/78442382 (c# 窗体放大窗体中的控件也随着窗体放大)
-15. https://www.cnblogs.com/hao-1234-1234/p/8668258.html (C#中的Round()不是我们中国人理解的四舍五入，是老外的四舍五入)
-16. https://www.cnblogs.com/TianFang/p/3427776.html (在C#中快速查询文件)
-17. https://www.cnblogs.com/yinqixin/p/5056307.html (分分钟用上C#中的委托和事件)
-18. https://www.cnblogs.com/ruanraun/p/6037075.html (委托学习总结（一）浅谈对C#委托理解)
-19. https://www.cnblogs.com/liuhaorain/p/3911845.html (C#委托使用详解（Delegates）)
-20. https://blog.csdn.net/honantic/article/details/46884537 ([深入学习C#]C#实现多线程的方法：线程(Thread类)和线程池(ThreadPool))
-21. http://www.cnblogs.com/kissdodog/archive/2013/03/28/2986026.html (线程池之ThreadPool类与辅助线程 - <第二篇>)
-22. https://www.cnblogs.com/changrulin/p/4775053.html (C#学习笔记----.net操作进程)
-23. https://www.cnblogs.com/tommyli/p/4054296.html (C# 获取进程或线程的相关信息)
-24. https://blog.csdn.net/u011108093/article/details/79448060 (ListView的BeginUpdate()和EndUpdate()作用)
-25. https://www.cnblogs.com/songxingzhu/p/3677307.html (InvokeRequired和Invoke)
-26. https://blog.csdn.net/chen_zw/article/details/7916262 (C# FileSystemWatcher用法详解)
-27. http://www.cnblogs.com/babycool/p/3569183.html (C#如何以管理员身份运行程序)
-28. https://www.cnblogs.com/cteng-common/p/fileaccess.html (C#文件夹权限操作整理)
-29. https://dotblogs.com.tw/larrynung/archive/2012/09/27/75118.aspx ([C#]如何取出最近在Windows上所使用的文件檔案)
-30. https://www.cnblogs.com/wolf-sun/p/4591734.html (C#修改文件或文件夹的权限，为指定用户、用户组添加完全控制权限)
-31. https://blog.csdn.net/u011623102/article/details/45335889 (文件操作中出现system.notsupportedexception异常)
-32. https://blog.csdn.net/linux7985/article/details/8646550 (C# Winform对文件夹的权限判断及处理)
-33. https://blog.csdn.net/mon_ice/article/details/64121050?locationNum=8&fps=1 (c#获取文件权限)
-34. https://support.microsoft.com/zh-cn/help/243330/well-known-security-identifiers-in-windows-operating-systems (在 Windows 操作系统中的公认的安全标识符)
-35. https://blog.csdn.net/codeeer/article/details/6732040 (ListView的ItemCheck和ItemChecked事件)
-36. https://baike.baidu.com/item/windows%E6%9D%83%E9%99%90/10292739?fr=aladdin (windows权限)
-37. https://docs.microsoft.com/zh-cn/dotnet/framework/winforms/controls/creating-an-explorer-style-interface-with-the-listview-and-treeview (演练：使用设计器创建带有 ListView 和 TreeView 控件的资源管理器样式的界面)
-38. https://blog.csdn.net/u014654707/article/details/80083091 （Visual Studio 2017 - Windows应用程序打包成exe文件（2）- Advanced Installer）
-39. https://blog.csdn.net/baidu_27438681/article/details/72823844 (
+1. 李鑫，祝惠娟. C#编程入门与应用[M]. 北京:清华大学出版社, 2017. 1-512
+2. 潘爱民. Windows内核原理与实现[M]. 北京:电子工业出版社, 2013. 1-680
+3. https://docs.microsoft.com/zh-cn/dotnet/csharp/ (C# 指南)
+4. https://docs.microsoft.com/zh-cn/dotnet/framework/winforms/index (Windows 窗体)
+5. https://docs.microsoft.com/zh-cn/dotnet/framework/winforms/controls/treeview-control-windows-forms (TreeView 控件（Windows 窗体）)
+6. https://blog.csdn.net/Lyncai/article/details/26681645 (Path.Combine （合并两个路径字符串）方法的一些使用细节)
+7. https://blog.csdn.net/luchuanbo/article/details/1630095 (C＃中TreeView组件使用方法初步)
+8. https://blog.csdn.net/eastmount/article/details/18474655 (C# 系统应用之获取Windows最近使用记录)
+9. https://www.cnblogs.com/shenbing/p/5629716.html (C#编程，TreeView控件的学习)
+10. https://blog.csdn.net/qth515/article/details/77890558 (C# SplitContainer 控件详细用法)
+11. https://blog.csdn.net/u010450592/article/details/46817233 (winfrom窗体的Anchor属性、Dock属性)
+12. https://www.cnblogs.com/menghuijinxi/p/5734274.html (关于.Net中Process的使用方法和各种用途汇总（一）：Process用法简介)
+13. https://blog.csdn.net/qq_29176825/article/details/77183599 (c# 设置窗体位置)
+14. https://bbs.csdn.net/topics/390753352 (C# ListView如何通代码触发BeforeLabelEdit事件)
+15. https://blog.csdn.net/jiliqiang1986/article/details/52034964 (C#中怎样使控件随着窗体一起变化大小(常见困难以及修正))
+16. https://blog.csdn.net/qq_36526650/article/details/78442382 (c# 窗体放大窗体中的控件也随着窗体放大)
+17. https://www.cnblogs.com/hao-1234-1234/p/8668258.html (C#中的Round()不是我们中国人理解的四舍五入，是老外的四舍五入)
+18. https://www.cnblogs.com/TianFang/p/3427776.html (在C#中快速查询文件)
+19. https://www.cnblogs.com/yinqixin/p/5056307.html (分分钟用上C#中的委托和事件)
+20. https://www.cnblogs.com/ruanraun/p/6037075.html (委托学习总结（一）浅谈对C#委托理解)
+21. https://www.cnblogs.com/liuhaorain/p/3911845.html (C#委托使用详解（Delegates）)
+22. https://blog.csdn.net/honantic/article/details/46884537 ([深入学习C#]C#实现多线程的方法：线程(Thread类)和线程池(ThreadPool))
+23. http://www.cnblogs.com/kissdodog/archive/2013/03/28/2986026.html (线程池之ThreadPool类与辅助线程 - <第二篇>)
+24. https://www.cnblogs.com/changrulin/p/4775053.html (C#学习笔记----.net操作进程)
+25. https://www.cnblogs.com/tommyli/p/4054296.html (C# 获取进程或线程的相关信息)
+26. https://blog.csdn.net/u011108093/article/details/79448060 (ListView的BeginUpdate()和EndUpdate()作用)
+27. https://www.cnblogs.com/songxingzhu/p/3677307.html (InvokeRequired和Invoke)
+28. https://blog.csdn.net/chen_zw/article/details/7916262 (C# FileSystemWatcher用法详解)
+29. http://www.cnblogs.com/babycool/p/3569183.html (C#如何以管理员身份运行程序)
+30. https://www.cnblogs.com/cteng-common/p/fileaccess.html (C#文件夹权限操作整理)
+31. https://dotblogs.com.tw/larrynung/archive/2012/09/27/75118.aspx ([C#]如何取出最近在Windows上所使用的文件檔案)
+32. https://www.cnblogs.com/wolf-sun/p/4591734.html (C#修改文件或文件夹的权限，为指定用户、用户组添加完全控制权限)
+33. https://blog.csdn.net/u011623102/article/details/45335889 (文件操作中出现system.notsupportedexception异常)
+34. https://blog.csdn.net/linux7985/article/details/8646550 (C# Winform对文件夹的权限判断及处理)
+35. https://blog.csdn.net/mon_ice/article/details/64121050?locationNum=8&fps=1 (c#获取文件权限)
+36. https://support.microsoft.com/zh-cn/help/243330/well-known-security-identifiers-in-windows-operating-systems (在 Windows 操作系统中的公认的安全标识符)
+37. https://blog.csdn.net/codeeer/article/details/6732040 (ListView的ItemCheck和ItemChecked事件)
+38. https://baike.baidu.com/item/windows%E6%9D%83%E9%99%90/10292739?fr=aladdin (windows权限)
+39. https://docs.microsoft.com/zh-cn/dotnet/framework/winforms/controls/creating-an-explorer-style-interface-with-the-listview-and-treeview (演练：使用设计器创建带有 ListView 和 TreeView 控件的资源管理器样式的界面)
+40. https://blog.csdn.net/u014654707/article/details/80083091 （Visual Studio 2017 - Windows应用程序打包成exe文件（2）- Advanced Installer）
+41. https://blog.csdn.net/baidu_27438681/article/details/72823844 (
    Visual Stdio 2015打包安装项目的方法（使用Visual Studio Installer）)
-40. https://baike.baidu.com/item/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/1951545 (资源管理器的定义)
+42. https://baike.baidu.com/item/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/1951545 (资源管理器的定义)
 
