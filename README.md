@@ -1,4 +1,7 @@
 ## MyFileManager
+[![MyFileManager](https://img.shields.io/badge/MyFileManager-v1.4.1-brightgreen.svg)](
+https://github.com/Yuziquan/MyFileManager)
+[![license](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Yuziquan/MyFileManager/blob/master/LICENSE)
 
 ### 一、功能预览
 
